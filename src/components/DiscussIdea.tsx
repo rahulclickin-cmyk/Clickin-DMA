@@ -7,17 +7,17 @@ interface DiscussIdeaProps {
 
 export const DiscussIdea: React.FC<DiscussIdeaProps> = ({ onGetInTouchClick }) => {
   return (
-    <section className="bg-[#090909] text-white py-12 px-4 md:px-8 border-b border-neutral-800/80">
-      <div className="max-w-6xl mx-auto bg-gradient-to-r from-neutral-900 via-[#121212] to-neutral-900 border border-amber-500/30 rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+    <section className="bg-slate-100 text-slate-900 py-12 px-4 md:px-8 border-b border-amber-200/80">
+      <div className="max-w-6xl mx-auto bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 text-slate-950 border border-amber-400 rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
         <div className="space-y-2 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
-            <MessageSquareCode className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 text-slate-950 font-black text-xs uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full border border-white/30">
+            <MessageSquareCode className="w-4 h-4 text-slate-950" />
             <span>Got a Custom Project?</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-extrabold text-amber-400">
+          <h2 className="text-2xl md:text-4xl font-black text-slate-950">
             Discuss Your Idea
           </h2>
-          <p className="text-neutral-300 text-sm md:text-base max-w-xl">
+          <p className="text-slate-900 text-sm md:text-base font-medium max-w-xl">
             Our Experts (Rahul Singh & Team) are ready to transform your ideas into valuable business results.
           </p>
         </div>
@@ -25,10 +25,10 @@ export const DiscussIdea: React.FC<DiscussIdeaProps> = ({ onGetInTouchClick }) =
         <div>
           <button
             onClick={onGetInTouchClick}
-            className="bg-[#d94800] hover:bg-[#b33a00] text-white font-black text-base px-8 py-3.5 rounded-xl shadow-lg transition-all transform hover:scale-105 flex items-center gap-2 cursor-pointer border border-amber-500/40 uppercase tracking-wide"
+            className="bg-slate-950 hover:bg-slate-900 text-white font-black text-base px-8 py-3.5 rounded-xl shadow-lg transition-all transform hover:scale-105 flex items-center gap-2 cursor-pointer uppercase tracking-wide border border-slate-800"
           >
             <span>GET IN TOUCH</span>
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5 text-amber-400" />
           </button>
         </div>
       </div>

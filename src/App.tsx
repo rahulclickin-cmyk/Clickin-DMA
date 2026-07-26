@@ -5,11 +5,11 @@ import { ServicesSliders } from './components/ServicesSliders';
 import { SocialSidebar } from './components/SocialSidebar';
 import { DiscussIdea } from './components/DiscussIdea';
 import { TrustRatings } from './components/TrustRatings';
+import { VideoTestimonials } from './components/VideoTestimonials';
 import { HowItWorks } from './components/HowItWorks';
 import { StatsCounter } from './components/StatsCounter';
 import { PricingPackages } from './components/PricingPackages';
 import { ProjectShowcase } from './components/ProjectShowcase';
-import { VideoTestimonials } from './components/VideoTestimonials';
 import { SanityPosts } from './components/SanityPosts';
 import { BottomLeadForm } from './components/BottomLeadForm';
 import { Footer } from './components/Footer';
@@ -17,6 +17,7 @@ import { DiscountModal } from './components/DiscountModal';
 import { BookCallModal } from './components/BookCallModal';
 import { FloatingContact } from './components/FloatingContact';
 import { InquiriesDrawer } from './components/InquiriesDrawer';
+import { SeoStructuredData } from './components/SeoStructuredData';
 import { getStoredLeads } from './lib/leadStorage';
 import { PackageItem, LeadInquiry } from './types';
 
@@ -47,13 +48,11 @@ export function App() {
     setIsBookCallModalOpen(true);
   };
 
-  const handleScrollToForm = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <div className="min-h-screen bg-black text-white font-sans antialiased selection:bg-amber-500 selection:text-black">
-      
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-amber-400 selection:text-slate-950">
+      {/* Search Engine & AI Recommendations JSON-LD Structured Data */}
+      <SeoStructuredData />
+
       {/* Top Header */}
       <Header
         onBookCallClick={() => {
@@ -89,8 +88,11 @@ export function App() {
           }}
         />
 
-        {/* Trust, Google Ratings & 6 Review Cards */}
+        {/* Trust, Google Ratings & Review Cards */}
         <TrustRatings />
+
+        {/* Client Video Testimonials */}
+        <VideoTestimonials />
 
         {/* How It Works ? 3 Steps */}
         <HowItWorks
@@ -115,9 +117,6 @@ export function App() {
             setIsBookCallModalOpen(true);
           }}
         />
-
-        {/* Video & Client Testimonials */}
-        <VideoTestimonials />
 
         {/* Sanity CMS Posts Section */}
         <SanityPosts

@@ -52,30 +52,30 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="bg-[#111111] border-2 border-amber-500 rounded-3xl max-w-md w-full p-6 md:p-8 space-y-6 relative shadow-2xl animate-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4">
+      <div className="bg-white border-2 border-amber-400 rounded-3xl max-w-md w-full p-6 md:p-8 space-y-6 relative shadow-2xl animate-in zoom-in-95 duration-200 text-slate-900">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 bg-neutral-800 text-neutral-300 hover:text-white p-2 rounded-full cursor-pointer transition-colors"
+          className="absolute top-4 right-4 bg-slate-100 text-slate-600 hover:text-slate-900 p-2 rounded-full cursor-pointer transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="text-center space-y-2">
-          <div className="w-14 h-14 bg-amber-500/10 border border-amber-500/30 rounded-2xl flex items-center justify-center mx-auto text-amber-400">
+          <div className="w-14 h-14 bg-amber-100 border border-amber-300 rounded-2xl flex items-center justify-center mx-auto text-amber-700">
             <Tag className="w-7 h-7" />
           </div>
-          <span className="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20 inline-block">
+          <span className="text-xs font-bold text-amber-900 uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full border border-amber-300 inline-block">
             CLICKIN DIGITAL EXCLUSIVE
           </span>
-          <h3 className="text-2xl font-black text-white">
+          <h3 className="text-2xl font-black text-slate-900">
             Unlock Special Discount!
           </h3>
-          <p className="text-xs text-neutral-400">
-            Get up to ₹2,000 extra off on Website & AI Lead Automation packages today.
+          <p className="text-xs text-slate-600 font-medium">
+            Get up to ₹2,000 extra off on Website & Lead Automation packages today.
           </p>
         </div>
 
@@ -93,8 +93,8 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
               onClick={() => setClaimedDiscount(item.discount)}
               className={`p-3 rounded-xl border transition-all text-xs cursor-pointer ${
                 claimedDiscount === item.discount
-                  ? 'bg-amber-500 text-black font-black border-amber-400 shadow-lg'
-                  : 'bg-neutral-900 text-neutral-300 border-neutral-800 hover:border-neutral-700'
+                  ? 'bg-amber-500 text-slate-950 font-black border-amber-400 shadow-sm'
+                  : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300 font-semibold'
               }`}
             >
               <div className="text-sm font-black">{item.discount}</div>
@@ -104,19 +104,19 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
         </div>
 
         {claimed ? (
-          <div className="bg-amber-500/10 border border-amber-500/50 rounded-2xl p-6 text-center space-y-3">
-            <div className="w-12 h-12 bg-amber-500 text-black rounded-full flex items-center justify-center mx-auto font-black text-xl">
+          <div className="bg-amber-100/80 border border-amber-300 rounded-2xl p-6 text-center space-y-3">
+            <div className="w-12 h-12 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center mx-auto font-black text-xl">
               <Check className="w-6 h-6 stroke-[3]" />
             </div>
-            <h4 className="font-bold text-amber-400 text-base">
+            <h4 className="font-bold text-amber-900 text-base">
               Coupon Code Locked!
             </h4>
-            <p className="text-xs text-neutral-300">
+            <p className="text-xs text-slate-800 font-medium">
               Coupon <strong>{claimedDiscount}</strong> saved for <strong>{phone}</strong>. Rahul Singh will contact you to apply this discount.
             </p>
             <button
               onClick={onClose}
-              className="bg-amber-500 text-black font-bold text-xs px-6 py-2.5 rounded-xl cursor-pointer"
+              className="bg-amber-500 text-slate-950 font-bold text-xs px-6 py-2.5 rounded-xl cursor-pointer hover:bg-amber-600"
             >
               Close Window
             </button>
@@ -124,21 +124,21 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-neutral-300 mb-1">Your Name *</label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Your Name *</label>
               <input
                 type="text"
                 required
                 placeholder="Enter Full Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-white text-black font-medium px-4 py-3 rounded-xl text-sm border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full bg-white text-slate-900 font-medium px-4 py-3 rounded-xl text-sm border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-neutral-300 mb-1">Mobile Number (for WhatsApp coupon) *</label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Mobile Number (for WhatsApp coupon) *</label>
               <div className="relative flex items-center">
-                <span className="absolute left-3 text-sm font-bold text-neutral-600 flex items-center gap-1">
+                <span className="absolute left-3 text-sm font-bold text-slate-600 flex items-center gap-1">
                   🇮🇳 +91
                 </span>
                 <input
@@ -147,7 +147,7 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
                   placeholder="Phone Number"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full bg-white text-black font-medium pl-18 pr-4 py-3 rounded-xl text-sm border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full bg-white text-slate-900 font-medium pl-18 pr-4 py-3 rounded-xl text-sm border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
             </div>
@@ -155,7 +155,7 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#ffb700] hover:bg-[#e0a200] text-black font-black text-sm py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
+              className="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-sm py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
             >
               {isSubmitting ? (
                 <span>Locking Discount...</span>
@@ -163,7 +163,7 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
                 <>
                   <Sparkles className="w-4 h-4" />
                   <span>CLAIM {claimedDiscount} NOW</span>
-                  <Send className="w-4 h-4 fill-black" />
+                  <Send className="w-4 h-4 fill-slate-950" />
                 </>
               )}
             </button>

@@ -1,6 +1,8 @@
 {
   "name": "Clickin DMA - Digital Marketing & AI Agency",
   "description": "High-converting website for Clickin DMA and AI Automation services by Rahul Singh.",
-  "requestFramePermissions": [],
+  "requestFramePermissions": [
+    "microphone"
+  ],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

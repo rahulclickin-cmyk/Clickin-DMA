@@ -164,7 +164,7 @@ export const OPTIONAL_ADDONS = [
   { name: 'Blog Setup', price: '₹1,500', icon: 'Layout' },
   { name: 'Booking System Upgrade', price: '₹3,000', icon: 'Calendar' },
   { name: 'Advanced SEO', price: '₹5,000+', icon: 'Search' },
-  { name: 'AI Chatbot', price: '₹5,000+', icon: 'Bot' },
+  { name: 'Smart Chatbot', price: '₹5,000+', icon: 'MessageSquare' },
   { name: 'WhatsApp Automation', price: '₹7,500+', icon: 'MessageSquare' },
   { name: 'Monthly Website Maintenance', price: '₹999/month', icon: 'ShieldCheck' }
 ];
@@ -172,67 +172,75 @@ export const OPTIONAL_ADDONS = [
 export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'proj-1',
-    title: 'Comfort Cotton - Ethnic Fashion E-Commerce',
-    category: 'e-commerce',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&auto=format&fit=crop&q=80',
-    description: 'High-converting online clothing catalog featuring custom collection banners, size guides, and instant Razorpay checkout.',
-    tags: ['E-Commerce', 'Fashion', 'Mobile Responsive', 'Razorpay Gateway']
+    title: 'Luxury Interior & Architecture Portfolio',
+    category: 'website',
+    image: 'https://lh3.googleusercontent.com/d/126tmb7V5fbLsTVgZQyMHun-6INW5BKh6',
+    url: 'https://drive.google.com/file/d/126tmb7V5fbLsTVgZQyMHun-6INW5BKh6/view?usp=drive_link',
+    description: 'High-converting interior design & architectural showcase featuring luxury product galleries, full page layouts, and interactive consultation booking.',
+    tags: ['Architecture', 'Interior Design', 'Lead Gen', 'Live Client Web']
   },
   {
     id: 'proj-2',
-    title: 'HealthCare Clinic & Tele-Consultation Portal',
-    category: 'local-business',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&auto=format&fit=crop&q=80',
-    description: 'Patient appointment booking system with online inquiry forms, WhatsApp integration, and automated SMS reminders.',
-    tags: ['Healthcare', 'Appointment Booking', 'WhatsApp Leads']
+    title: 'Comfort Cotton - Ethnic Fashion E-Commerce',
+    category: 'e-commerce',
+    image: 'https://lh3.googleusercontent.com/d/1B6MApIk28CUTnLi5tTOxHvo5Sn6c_KkF',
+    url: 'https://drive.google.com/file/d/1B6MApIk28CUTnLi5tTOxHvo5Sn6c_KkF/view?usp=drive_link',
+    description: 'Custom online clothing catalog featuring responsive festive collection banners, product filters, and instant Razorpay checkout.',
+    tags: ['E-Commerce', 'Fashion Store', 'Razorpay Gateway', 'Mobile Responsive']
   },
   {
     id: 'proj-3',
-    title: 'Interior Design & Sanitaryware Fittings Hub',
-    category: 'website',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&auto=format&fit=crop&q=80',
-    description: 'Modern, high-end product gallery showcasing luxury bathroom and kitchen architecture with quote request engine.',
-    tags: ['Architecture', 'Product Catalog', 'Lead Gen']
+    title: 'HealthCare Dental & Clinic Tele-Consultation',
+    category: 'local-business',
+    image: 'https://lh3.googleusercontent.com/d/1IREvxIOP3X4q1MkL_qwdiXdFb79x-oms',
+    url: 'https://drive.google.com/file/d/1IREvxIOP3X4q1MkL_qwdiXdFb79x-oms/view?usp=drive_link',
+    description: 'Patient appointment booking portal with online inquiry forms, WhatsApp integration, doctor profiles, and automated notifications.',
+    tags: ['Healthcare', 'Appointment Booking', 'WhatsApp Leads', 'Clinic Website']
   },
   {
     id: 'proj-4',
-    title: 'Real Estate & Property Investment Showcase',
+    title: 'Real Estate & Property Investment Portal',
     category: 'local-business',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1000&auto=format&fit=crop&q=80',
-    description: 'Interactive property listings with virtual floor plan views, instant call request, and AI lead scoring sequence.',
-    tags: ['Real Estate', 'AI Lead Gen', 'Property Portal']
+    image: 'https://lh3.googleusercontent.com/d/1tbOTq1NZHMTfkN4gTl05k94xJOKtXaIG',
+    url: 'https://drive.google.com/file/d/1tbOTq1NZHMTfkN4gTl05k94xJOKtXaIG/view?usp=drive_link',
+    description: 'Interactive property listings with virtual floor plans, instant call request buttons, and automated lead routing.',
+    tags: ['Real Estate', 'Lead Gen', 'Property Portal', 'High Converting']
   },
   {
     id: 'proj-5',
-    title: 'Automated Outreach & Lead Generation Portal',
+    title: 'Automated Lead Outreach & CRM Portal',
     category: 'automation',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=80',
-    description: 'Automated CRM integration and email sequence builder designed for B2B local business outreach.',
-    tags: ['AI Automation', 'Email Sequences', 'CRM Workflow']
+    image: 'https://lh3.googleusercontent.com/d/1qPElNsJF6JC9jcdb1HOiioLdORPfVuUe',
+    url: 'https://drive.google.com/file/d/1qPElNsJF6JC9jcdb1HOiioLdORPfVuUe/view?usp=drive_link',
+    description: 'Smart B2B lead generation dashboard and automated outreach sequence builder tailored for growing business clients.',
+    tags: ['Smart Automation', 'B2B Lead Gen', 'CRM Workflow', 'Sales Funnel']
   },
   {
     id: 'proj-6',
     title: 'Celebration Ethnic Anarkali Boutique Store',
     category: 'e-commerce',
-    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1000&auto=format&fit=crop&q=80',
-    description: 'Vibrant ethnic wear store optimized for heavy festive sales with instagram shop feed integration.',
-    tags: ['Boutique', 'E-Commerce', 'Instagram Sync']
+    image: 'https://lh3.googleusercontent.com/d/1ansFayHNHguuLtQlKg99inPB6ojhZKT0',
+    url: 'https://drive.google.com/file/d/1ansFayHNHguuLtQlKg99inPB6ojhZKT0/view?usp=drive_link',
+    description: 'Vibrant ethnic fashion store optimized for high-volume festive sales with Instagram shop sync and discount banners.',
+    tags: ['Boutique', 'E-Commerce', 'Instagram Sync', 'Bridal Wear']
   },
   {
     id: 'proj-7',
     title: 'FitPulse Gym & Fitness Studio Booking',
     category: 'local-business',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000&auto=format&fit=crop&q=80',
-    description: 'Personal training booking website with membership plans, trainer schedules, and online payment setup.',
-    tags: ['Gym & Fitness', 'Booking System', 'Membership Portal']
+    image: 'https://lh3.googleusercontent.com/d/1c83IDdd8-VUg7nxk5NzQzTgsiQkDYJTz',
+    url: 'https://drive.google.com/file/d/1c83IDdd8-VUg7nxk5NzQzTgsiQkDYJTz/view?usp=drive_link',
+    description: 'Personal training & gym membership booking portal with trainer schedules, class passes, and online payment setup.',
+    tags: ['Gym & Fitness', 'Booking System', 'Membership Portal', 'Local Business']
   },
   {
     id: 'proj-8',
-    title: 'Gourmet Bistro & Cafe Digital Menu & Orders',
+    title: 'Gourmet Bistro & Cafe Digital Menu Landing',
     category: 'website',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&auto=format&fit=crop&q=80',
-    description: 'Sleek dark theme restaurant landing page with digital QR menu, table reservation engine, and WhatsApp order desk.',
-    tags: ['Restaurant', 'QR Menu', 'Table Reservation']
+    image: 'https://lh3.googleusercontent.com/d/1mDOFsW5k_fVtSlm26wIY2QxceIA7Zpus',
+    url: 'https://drive.google.com/file/d/1mDOFsW5k_fVtSlm26wIY2QxceIA7Zpus/view?usp=drive_link',
+    description: 'Sleek restaurant website featuring digital QR code menus, table reservation engine, and instant WhatsApp order desk.',
+    tags: ['Restaurant', 'QR Menu', 'Table Reservation', 'Digital Order']
   }
 ];
 

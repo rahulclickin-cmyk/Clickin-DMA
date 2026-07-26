@@ -15,7 +15,6 @@ import {
   Layout, 
   Calendar, 
   Search, 
-  Bot, 
   MessageSquare, 
   ShieldCheck,
   PlusCircle
@@ -38,7 +37,6 @@ const getAddonIcon = (iconName: string) => {
     case 'Layout': return <Layout {...props} />;
     case 'Calendar': return <Calendar {...props} />;
     case 'Search': return <Search {...props} />;
-    case 'Bot': return <Bot {...props} />;
     case 'MessageSquare': return <MessageSquare {...props} />;
     case 'ShieldCheck': return <ShieldCheck {...props} />;
     default: return <PlusCircle {...props} />;
@@ -47,24 +45,24 @@ const getAddonIcon = (iconName: string) => {
 
 export const PricingPackages: React.FC<PricingPackagesProps> = ({ onSelectPackage }) => {
   return (
-    <section id="pricing" className="bg-[#0a0a0a] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-neutral-900">
+    <section id="pricing" className="bg-slate-50 text-slate-900 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-amber-200/80">
       
       {/* Background Radial Lights */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber-500/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber-200/20 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-yellow-200/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto space-y-16 relative z-10">
         
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold text-xs uppercase tracking-widest">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 font-bold text-xs uppercase tracking-widest">
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
             <span>Transparent Agency Pricing</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-            Web Development & <span className="text-amber-400">Digital Packages</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+            Web Development & <span className="text-amber-600">Digital Packages</span>
           </h2>
-          <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
             High-converting websites tailored for Indian businesses & global brands. No hidden renewal tricks, realistic deliverable timelines, and full ongoing support.
           </p>
         </div>
@@ -76,14 +74,14 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onSelectPackag
               key={pkg.id}
               className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 relative group ${
                 pkg.popular
-                  ? 'bg-gradient-to-b from-neutral-900 via-neutral-950 to-neutral-900 border-2 border-amber-400 shadow-[0_0_30px_rgba(251,191,36,0.15)] md:-translate-y-2'
-                  : 'bg-neutral-900/70 backdrop-blur-md border border-neutral-800 hover:border-amber-500/40 hover:shadow-xl hover:shadow-amber-500/5'
+                  ? 'bg-white border-2 border-amber-500 shadow-xl md:-translate-y-2'
+                  : 'bg-white border border-slate-200 hover:border-amber-400 shadow-sm hover:shadow-md'
               }`}
             >
               {/* Most Popular Badge */}
               {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs px-4 py-1 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1.5 z-20 whitespace-nowrap">
-                  <Sparkles className="w-3.5 h-3.5 fill-black" />
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-xs px-4 py-1 rounded-full uppercase tracking-widest shadow-md flex items-center gap-1.5 z-20 whitespace-nowrap">
+                  <Sparkles className="w-3.5 h-3.5 fill-slate-950" />
                   <span>{pkg.badge || 'Most Popular'}</span>
                 </div>
               )}
@@ -91,16 +89,16 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onSelectPackag
               {/* Card Main Info */}
               <div className="space-y-6">
                 {/* Header info */}
-                <div className="text-center space-y-2 border-b border-neutral-800 pb-5">
-                  <h3 className="text-sm font-extrabold uppercase tracking-widest text-amber-400">
+                <div className="text-center space-y-2 border-b border-slate-100 pb-5">
+                  <h3 className="text-sm font-extrabold uppercase tracking-widest text-amber-800">
                     {pkg.name}
                   </h3>
                   
-                  <div className="text-3xl sm:text-4xl font-black text-white tracking-tight pt-1">
+                  <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight pt-1">
                     {pkg.price}
                   </div>
 
-                  <p className="text-xs text-neutral-400 font-medium min-h-[36px] flex items-center justify-center leading-snug">
+                  <p className="text-xs text-slate-500 font-medium min-h-[36px] flex items-center justify-center leading-snug">
                     {pkg.subtitle}
                   </p>
                 </div>
@@ -108,8 +106,8 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onSelectPackag
                 {/* Features List */}
                 <ul className="space-y-3 pt-1 text-xs sm:text-sm">
                   {pkg.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-neutral-300">
-                      <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start gap-2.5 text-slate-700 font-medium">
+                      <Check className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                       <span className="leading-snug">{feat}</span>
                     </li>
                   ))}
@@ -122,8 +120,8 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onSelectPackag
                   onClick={() => onSelectPackage(pkg)}
                   className={`w-full py-3.5 px-5 rounded-xl font-extrabold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider ${
                     pkg.popular
-                      ? 'bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02]'
-                      : 'bg-neutral-800 hover:bg-amber-500 hover:text-black text-white border border-neutral-700 hover:border-amber-400 hover:scale-[1.02]'
+                      ? 'bg-amber-500 hover:bg-amber-600 text-slate-950 shadow-md hover:scale-[1.02]'
+                      : 'bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white shadow-sm hover:scale-[1.02]'
                   }`}
                 >
                   <span>Get Started</span>
@@ -137,10 +135,10 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onSelectPackag
         {/* Optional Add-ons Section */}
         <div className="space-y-8 pt-8">
           <div className="text-center space-y-2 max-w-xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white">
-              Optional <span className="text-amber-400">Add-ons & Upgrades</span>
+            <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+              Optional <span className="text-amber-600">Add-ons & Upgrades</span>
             </h3>
-            <p className="text-neutral-400 text-xs sm:text-sm">
+            <p className="text-slate-600 text-xs sm:text-sm font-medium">
               Customize your project with standalone modules and specialized integrations.
             </p>
           </div>
@@ -149,17 +147,17 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onSelectPackag
             {OPTIONAL_ADDONS.map((addon, idx) => (
               <div
                 key={idx}
-                className="bg-neutral-900/60 backdrop-blur-md border border-neutral-800/80 hover:border-amber-500/40 p-4 rounded-xl flex items-center justify-between gap-3 transition-all duration-300 hover:bg-neutral-900/90 group"
+                className="bg-white border border-slate-200 hover:border-amber-400 p-4 rounded-xl flex items-center justify-between gap-3 transition-all duration-300 shadow-sm hover:shadow-md group"
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="p-2 rounded-lg bg-neutral-800/80 group-hover:bg-amber-500/10 transition-colors">
+                  <div className="p-2 rounded-lg bg-amber-50 group-hover:bg-amber-100 transition-colors">
                     {getAddonIcon(addon.icon)}
                   </div>
-                  <span className="text-xs sm:text-sm font-semibold text-neutral-200 truncate group-hover:text-white">
+                  <span className="text-xs sm:text-sm font-bold text-slate-800 truncate">
                     {addon.name}
                   </span>
                 </div>
-                <span className="bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold px-2.5 py-1 rounded-lg shrink-0">
+                <span className="bg-amber-100 border border-amber-300 text-amber-900 text-xs font-black px-2.5 py-1 rounded-lg shrink-0">
                   {addon.price}
                 </span>
               </div>
@@ -168,9 +166,9 @@ export const PricingPackages: React.FC<PricingPackagesProps> = ({ onSelectPackag
         </div>
 
         {/* Disclaimer Note */}
-        <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-5 max-w-4xl mx-auto text-center space-y-1">
-          <p className="text-xs sm:text-sm text-neutral-300 font-medium flex items-center justify-center gap-2">
-            <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 inline-block" />
+        <div className="bg-amber-100/60 border border-amber-300/80 rounded-2xl p-5 max-w-4xl mx-auto text-center space-y-1">
+          <p className="text-xs sm:text-sm text-slate-800 font-bold flex items-center justify-center gap-2">
+            <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0 inline-block" />
             <span>
               *Domain, Hosting, Premium Themes, Premium Plugins and Third-party Subscription Charges are not included in the above packages.*
             </span>

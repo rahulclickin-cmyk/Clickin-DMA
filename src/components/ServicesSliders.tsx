@@ -12,7 +12,6 @@ import {
   MessageSquare,
   FileText,
   Shield,
-  Bot,
   Sparkles,
   Workflow,
   Zap,
@@ -49,28 +48,27 @@ const DIGITAL_MARKETING_SERVICES: ServiceItem[] = [
   { id: 'orm', name: 'Online Reputation Management', icon: Shield, color: '#06B6D4' }
 ];
 
-const AI_AUTOMATION_SERVICES: ServiceItem[] = [
-  { id: 'ai-chatbots', name: 'AI Chatbots', icon: Bot, color: '#8B5CF6' },
-  { id: 'ai-campaigns', name: 'AI-Powered Campaigns', icon: Sparkles, color: '#EC4899' },
+const AUTOMATION_SERVICES: ServiceItem[] = [
+  { id: 'ai-chatbots', name: 'Smart Chatbots', icon: MessageSquare, color: '#8B5CF6' },
+  { id: 'ai-campaigns', name: 'Smart Campaigns', icon: Zap, color: '#EC4899' },
   { id: 'workflow', name: 'Workflow Automation', icon: Workflow, color: '#8B5CF6' },
-  { id: 'lead-nurture', name: 'AI Lead Nurturing', icon: Zap, color: '#F59E0B' },
+  { id: 'lead-nurture', name: 'Smart Lead Nurturing', icon: Zap, color: '#F59E0B' },
   { id: 'crm', name: 'CRM Automation', icon: Database, color: '#10B981' },
   { id: 'analytics', name: 'Predictive Analytics', icon: BarChart3, color: '#06B6D4' },
-  { id: 'ai-support', name: 'AI Customer Support Agents', icon: Users, color: '#6366F1' },
-  { id: 'custom-ai', name: 'Custom AI Integrations', icon: Wrench, color: '#F97316' }
+  { id: 'ai-support', name: 'Automated Customer Support', icon: Users, color: '#6366F1' },
+  { id: 'custom-ai', name: 'Custom Software Integrations', icon: Wrench, color: '#F97316' }
 ];
 
 export const ServicesSliders: React.FC<ServicesSlidersProps> = ({ onExploreClick }) => {
   // Triplicating lists for seamless infinite looping marquee
   const digitalLoop = [...DIGITAL_MARKETING_SERVICES, ...DIGITAL_MARKETING_SERVICES, ...DIGITAL_MARKETING_SERVICES];
-  const aiLoop = [...AI_AUTOMATION_SERVICES, ...AI_AUTOMATION_SERVICES, ...AI_AUTOMATION_SERVICES, ...AI_AUTOMATION_SERVICES];
+  const aiLoop = [...AUTOMATION_SERVICES, ...AUTOMATION_SERVICES, ...AUTOMATION_SERVICES, ...AUTOMATION_SERVICES];
 
   return (
-    <section className="relative bg-[#0d0d0c] text-white py-20 overflow-hidden border-y border-amber-500/20">
-      {/* Background Radial Glow Effects with Light Yellow / Amber Tones */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-amber-400/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-yellow-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 pointer-events-none" />
+    <section className="relative bg-slate-50 text-slate-900 py-20 overflow-hidden border-y border-amber-200/80">
+      {/* Background Radial Glow Effects */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-amber-200/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-yellow-200/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 space-y-16">
         
@@ -79,27 +77,27 @@ export const ServicesSliders: React.FC<ServicesSlidersProps> = ({ onExploreClick
           {/* Header 1 */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
                 Digital Marketing Services
               </h2>
-              <p className="text-amber-200/80 text-sm md:text-base mt-1 font-medium">
+              <p className="text-slate-600 text-sm md:text-base mt-1 font-medium">
                 Full-spectrum marketing solutions for your brand
               </p>
             </div>
             <button
               onClick={onExploreClick}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-amber-500/40 hover:border-amber-400 bg-neutral-900/80 hover:bg-neutral-800 text-amber-300 hover:text-amber-400 font-semibold text-xs md:text-sm transition-all group shrink-0 self-start md:self-auto shadow-md"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-amber-300 hover:border-amber-500 bg-white hover:bg-amber-50 text-amber-900 font-bold text-xs md:text-sm transition-all group shrink-0 self-start md:self-auto shadow-sm"
             >
               <span>View All Digital Services</span>
-              <ArrowRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-amber-600 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* Slider 1 Continuous Scroll Container */}
           <div className="relative w-full overflow-hidden group">
             {/* Side fading masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#0d0d0c] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#0d0d0c] to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
             {/* Marquee Track: Left-to-Right */}
             <div className="flex gap-6 w-max animate-marquee-left group-hover:[animation-play-state:paused] py-2">
@@ -108,16 +106,16 @@ export const ServicesSliders: React.FC<ServicesSlidersProps> = ({ onExploreClick
                 return (
                   <div
                     key={`digital-${item.id}-${idx}`}
-                    className="flex items-center gap-4 bg-neutral-900/70 backdrop-blur-md border border-amber-500/20 hover:border-amber-400/60 rounded-2xl p-4 px-6 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 hover:scale-105 transition-all duration-300 cursor-pointer shrink-0"
+                    className="flex items-center gap-4 bg-white/90 backdrop-blur-md border border-slate-200 hover:border-amber-400 rounded-2xl p-4 px-6 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-pointer shrink-0"
                     onClick={onExploreClick}
                   >
                     <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-inner"
-                      style={{ backgroundColor: `${item.color}20`, color: item.color }}
+                      style={{ backgroundColor: `${item.color}15`, color: item.color }}
                     >
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <span className="font-bold text-white text-sm md:text-base whitespace-nowrap tracking-wide">
+                    <span className="font-bold text-slate-800 text-sm md:text-base whitespace-nowrap tracking-wide">
                       {item.name}
                     </span>
                   </div>
@@ -127,32 +125,32 @@ export const ServicesSliders: React.FC<ServicesSlidersProps> = ({ onExploreClick
           </div>
         </div>
 
-        {/* SLIDER 2: AI & Automation Solutions */}
+        {/* SLIDER 2: Automation Solutions */}
         <div className="space-y-8">
           {/* Header 2 */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                AI & Automation Solutions
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
+                Smart Automation Solutions
               </h2>
-              <p className="text-amber-200/80 text-sm md:text-base mt-1 font-medium">
-                Cutting-edge AI technologies for your business
+              <p className="text-slate-600 text-sm md:text-base mt-1 font-medium">
+                Cutting-edge automation technologies for your business
               </p>
             </div>
             <button
               onClick={onExploreClick}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-amber-500/40 hover:border-amber-400 bg-neutral-900/80 hover:bg-neutral-800 text-amber-300 hover:text-amber-400 font-semibold text-xs md:text-sm transition-all group shrink-0 self-start md:self-auto shadow-md"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-amber-300 hover:border-amber-500 bg-white hover:bg-amber-50 text-amber-900 font-bold text-xs md:text-sm transition-all group shrink-0 self-start md:self-auto shadow-sm"
             >
-              <span>Explore AI Solutions</span>
-              <ArrowRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
+              <span>Explore Automation Solutions</span>
+              <ArrowRight className="w-4 h-4 text-amber-600 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* Slider 2 Continuous Scroll Container */}
           <div className="relative w-full overflow-hidden group">
             {/* Side fading masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#0d0d0c] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#0d0d0c] to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
             {/* Marquee Track: Right-to-Left */}
             <div className="flex gap-6 w-max animate-marquee-right group-hover:[animation-play-state:paused] py-2">
@@ -161,16 +159,16 @@ export const ServicesSliders: React.FC<ServicesSlidersProps> = ({ onExploreClick
                 return (
                   <div
                     key={`ai-${item.id}-${idx}`}
-                    className="flex items-center gap-4 bg-neutral-900/70 backdrop-blur-md border border-amber-500/20 hover:border-amber-400/60 rounded-2xl p-4 px-6 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 hover:scale-105 transition-all duration-300 cursor-pointer shrink-0"
+                    className="flex items-center gap-4 bg-white/90 backdrop-blur-md border border-slate-200 hover:border-amber-400 rounded-2xl p-4 px-6 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-pointer shrink-0"
                     onClick={onExploreClick}
                   >
                     <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-inner"
-                      style={{ backgroundColor: `${item.color}20`, color: item.color }}
+                      style={{ backgroundColor: `${item.color}15`, color: item.color }}
                     >
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <span className="font-bold text-white text-sm md:text-base whitespace-nowrap tracking-wide">
+                    <span className="font-bold text-slate-800 text-sm md:text-base whitespace-nowrap tracking-wide">
                       {item.name}
                     </span>
                   </div>
