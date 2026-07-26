@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Bot, Smartphone, Layout, MessageSquare, Zap, Target, TrendingUp, ShoppingBag, ShieldCheck, Sparkles, MapPin, Code2, Cpu } from 'lucide-react';
+import { Search, Bot, Layout, MessageSquare, Zap, Target, TrendingUp, ShoppingBag, ShieldCheck, Sparkles, MapPin, Code2, Cpu } from 'lucide-react';
 
 export const DarkServicesTicker: React.FC = () => {
   const serviceGroup1 = [
@@ -12,19 +12,19 @@ export const DarkServicesTicker: React.FC = () => {
       color: "border-amber-500/40 text-amber-400 bg-amber-500/10"
     },
     {
-      badge: "GSO",
-      title: "Generative Search Optimization (GSO)",
+      badge: "GEO",
+      title: "Generative Engine Optimization (GEO)",
       desc: "Optimize your brand for AI search engines including ChatGPT, Perplexity AI, Google AI Overviews & Gemini.",
       icon: Bot,
       highlight: "AI Search Ready",
       color: "border-purple-500/40 text-purple-400 bg-purple-500/10"
     },
     {
-      badge: "ASO",
-      title: "App Store Optimization (ASO)",
-      desc: "Maximize mobile app downloads on Google Play & Apple App Store with keyword indexation & CTR optimization.",
-      icon: Smartphone,
-      highlight: "App Growth",
+      badge: "LOCAL MAP SEO",
+      title: "Google Map Pack & Local Business SEO",
+      desc: "Rank in the top 3 Google Map Local Pack for 'Website Designer Near Me' and local area keywords across Delhi NCR.",
+      icon: MapPin,
+      highlight: "Map Pack #1",
       color: "border-blue-500/40 text-blue-400 bg-blue-500/10"
     },
     {
@@ -61,14 +61,6 @@ export const DarkServicesTicker: React.FC = () => {
       icon: TrendingUp,
       highlight: "Social Scale",
       color: "border-pink-500/40 text-pink-400 bg-pink-500/10"
-    },
-    {
-      badge: "LOCAL SEO",
-      title: "Google Business Profile Ranking",
-      desc: "Rank in the top 3 Google Map Local Pack for 'Website Designer Near Me' and local area keywords across Delhi NCR.",
-      icon: MapPin,
-      highlight: "Map Pack #1",
-      color: "border-amber-400/40 text-amber-300 bg-amber-400/10"
     },
     {
       badge: "E-COMMERCE",
@@ -142,7 +134,7 @@ export const DarkServicesTicker: React.FC = () => {
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-slate-900 border border-amber-400/40 px-4 py-1.5 rounded-full text-xs font-black text-amber-400 uppercase tracking-widest shadow-lg shadow-amber-500/10">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>SEO • GSO • ASO • WEB DESIGN • LOCAL DOMINANCE</span>
+            <span>SEO • GEO • WEB DESIGN • GOOGLE ADS • LOCAL MAP PACK</span>
           </div>
 
           <h2 className="text-3xl md:text-5xl font-black text-white leading-tight tracking-tight">
@@ -150,13 +142,13 @@ export const DarkServicesTicker: React.FC = () => {
           </h2>
           
           <p className="text-slate-400 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
-            Our specialized services continuously move your business to the top of Google Search, AI Search Engines (ChatGPT, Gemini, Perplexity), and App Stores with high-converting web architecture.
+            Our specialized services continuously move your business to the top of Google Search, AI Search Engines (ChatGPT, Gemini, Perplexity), and Google Maps with high-converting web architecture.
           </p>
         </div>
 
         {/* Highlight Keyword Badges Row */}
         <div className="flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto pt-2">
-          {["SEO Optimization", "GSO (AI Search)", "ASO (App Store)", "Website Designing", "Local SEO Najafgarh", "Dwarka Web Dev", "Google Ads", "Meta Ads", "WhatsApp Automation", "E-Commerce Stores", "Custom Portals", "Google Maps #1"].map((kw, i) => (
+          {["SEO Optimization", "GEO (AI Search)", "Website Designing", "Local SEO Najafgarh", "Dwarka Web Dev", "Google Ads", "Meta Ads", "WhatsApp Automation", "E-Commerce Stores", "Custom Portals", "Google Maps #1"].map((kw, i) => (
             <span
               key={i}
               className="bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-amber-400/30 hover:border-amber-400 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition-colors cursor-default"
@@ -169,7 +161,7 @@ export const DarkServicesTicker: React.FC = () => {
         {/* Vertical Moving Ticker Container (Bottom-to-Top Scrolling) */}
         <div className="relative h-[460px] md:h-[520px] overflow-hidden rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-xl p-4 md:p-6 shadow-2xl">
           
-          {/* Top & Bottom Gradient Mask Overlays (Items smoothly fade out & hide before next section) */}
+          {/* Top & Bottom Gradient Mask Overlays */}
           <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-slate-950 via-slate-950/80 to-transparent z-20 pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-20 pointer-events-none" />
 

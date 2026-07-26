@@ -135,10 +135,6 @@ export const Footer: React.FC<FooterProps> = ({ onGetInTouchClick, onViewLeadsCl
             Copyright © 2026 Clickin DMA | Rahul Singh. All Rights Reserved.
           </p>
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-amber-100 border border-amber-300 text-amber-900 font-mono text-[11px] font-bold">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              Sanity CMS Connected (<code className="font-bold">vuo3tmag</code>)
-            </span>
             <p className="flex items-center gap-1">
               <span>Powered by</span>
               <strong className="text-amber-800 font-extrabold">Clickin DMA</strong>
