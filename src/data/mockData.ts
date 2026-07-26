@@ -174,23 +174,23 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
     id: 'proj-1',
     title: 'Comfort Cotton - Ethnic Fashion E-Commerce',
     category: 'e-commerce',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&auto=format&fit=crop&q=80',
     description: 'High-converting online clothing catalog featuring custom collection banners, size guides, and instant Razorpay checkout.',
-    tags: ['E-Commerce', 'Fashion', 'Mobile Responsive', 'Payment Gateway']
+    tags: ['E-Commerce', 'Fashion', 'Mobile Responsive', 'Razorpay Gateway']
   },
   {
     id: 'proj-2',
     title: 'HealthCare Clinic & Tele-Consultation Portal',
     category: 'local-business',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&auto=format&fit=crop&q=80',
     description: 'Patient appointment booking system with online inquiry forms, WhatsApp integration, and automated SMS reminders.',
-    tags: ['Healthcare', 'Appointment Booking', 'Lead Automation']
+    tags: ['Healthcare', 'Appointment Booking', 'WhatsApp Leads']
   },
   {
     id: 'proj-3',
     title: 'Interior Design & Sanitaryware Fittings Hub',
     category: 'website',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&auto=format&fit=crop&q=80',
     description: 'Modern, high-end product gallery showcasing luxury bathroom and kitchen architecture with quote request engine.',
     tags: ['Architecture', 'Product Catalog', 'Lead Gen']
   },
@@ -198,15 +198,15 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
     id: 'proj-4',
     title: 'Real Estate & Property Investment Showcase',
     category: 'local-business',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1000&auto=format&fit=crop&q=80',
     description: 'Interactive property listings with virtual floor plan views, instant call request, and AI lead scoring sequence.',
-    tags: ['Real Estate', 'AI Lead Generation', 'Delhi NCR']
+    tags: ['Real Estate', 'AI Lead Gen', 'Property Portal']
   },
   {
     id: 'proj-5',
     title: 'Automated Outreach & Lead Generation Portal',
     category: 'automation',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=80',
     description: 'Automated CRM integration and email sequence builder designed for B2B local business outreach.',
     tags: ['AI Automation', 'Email Sequences', 'CRM Workflow']
   },
@@ -214,9 +214,25 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
     id: 'proj-6',
     title: 'Celebration Ethnic Anarkali Boutique Store',
     category: 'e-commerce',
-    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1000&auto=format&fit=crop&q=80',
     description: 'Vibrant ethnic wear store optimized for heavy festive sales with instagram shop feed integration.',
     tags: ['Boutique', 'E-Commerce', 'Instagram Sync']
+  },
+  {
+    id: 'proj-7',
+    title: 'FitPulse Gym & Fitness Studio Booking',
+    category: 'local-business',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000&auto=format&fit=crop&q=80',
+    description: 'Personal training booking website with membership plans, trainer schedules, and online payment setup.',
+    tags: ['Gym & Fitness', 'Booking System', 'Membership Portal']
+  },
+  {
+    id: 'proj-8',
+    title: 'Gourmet Bistro & Cafe Digital Menu & Orders',
+    category: 'website',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&auto=format&fit=crop&q=80',
+    description: 'Sleek dark theme restaurant landing page with digital QR menu, table reservation engine, and WhatsApp order desk.',
+    tags: ['Restaurant', 'QR Menu', 'Table Reservation']
   }
 ];
 

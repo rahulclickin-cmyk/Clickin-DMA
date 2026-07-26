@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SHOWCASE_PROJECTS } from '../data/mockData';
 import { ShowcaseProject } from '../types';
-import { ExternalLink, Eye, LayoutGrid, X, CheckCircle2, PhoneCall } from 'lucide-react';
+import { ExternalLink, Eye, LayoutGrid, X, CheckCircle2, PhoneCall, MousePointerClick } from 'lucide-react';
 
 interface ProjectShowcaseProps {
   onContactClick: () => void;
@@ -29,7 +29,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onContactClick
             Our Project Showcase
           </h2>
           <p className="text-neutral-400 text-sm max-w-xl mx-auto">
-            Explore recent client websites and automated lead generation engines developed by Clickin Digital.
+            Explore live client websites & marketing design demos. Hover over any design box to scroll through the full webpage!
           </p>
         </div>
 
@@ -63,20 +63,38 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onContactClick
               key={project.id}
               className="bg-[#0e0e0e] border border-neutral-800 hover:border-amber-500/60 rounded-2xl overflow-hidden shadow-xl transition-all group flex flex-col justify-between"
             >
-              {/* Project Image Box */}
-              <div className="relative aspect-video bg-neutral-900 overflow-hidden">
+              {/* Browser Mockup Top Bar */}
+              <div className="bg-neutral-900 px-3.5 py-2 border-b border-neutral-800/90 flex items-center justify-between gap-2 select-none">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                </div>
+                <div className="bg-neutral-950 border border-neutral-800/80 px-2.5 py-0.5 rounded-full text-[10px] text-neutral-400 font-mono truncate max-w-[160px] sm:max-w-[200px]">
+                  https://{project.id}.clickindma.com
+                </div>
+                <div className="text-[10px] text-amber-400/90 font-semibold flex items-center gap-1">
+                  <MousePointerClick className="w-3 h-3 text-amber-400" />
+                  <span className="hidden sm:inline">Hover to Scroll</span>
+                </div>
+              </div>
+
+              {/* Auto-scrollable Website Image Container */}
+              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-neutral-950">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full object-cover object-top transition-transform duration-[5000ms] ease-in-out group-hover:-translate-y-[calc(100%-16rem)] sm:group-hover:-translate-y-[calc(100%-18rem)]"
                 />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 p-4">
+
+                {/* Hover Quick Action Overlay */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4 pointer-events-none">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="bg-amber-500 text-black px-4 py-2 rounded-lg font-bold text-xs flex items-center gap-1.5 shadow-lg cursor-pointer transform hover:scale-105 transition-transform"
+                    className="bg-amber-500 hover:bg-amber-400 text-black px-4 py-2 rounded-xl font-extrabold text-xs flex items-center gap-1.5 shadow-xl pointer-events-auto cursor-pointer transform hover:scale-105 transition-all"
                   >
                     <Eye className="w-4 h-4" />
-                    Preview Details
+                    <span>View Full Details</span>
                   </button>
                 </div>
               </div>
@@ -140,11 +158,11 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onContactClick
               </h3>
             </div>
 
-            <div className="rounded-xl overflow-hidden border border-neutral-800 aspect-video bg-neutral-950">
+            <div className="rounded-xl overflow-hidden border border-neutral-800 h-80 bg-neutral-950 relative group/modal">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full h-full object-cover"
+                className="w-full object-cover object-top transition-transform duration-[6000ms] ease-in-out group-hover/modal:-translate-y-[calc(100%-20rem)]"
               />
             </div>
 
@@ -198,3 +216,4 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onContactClick
     </section>
   );
 };
+
