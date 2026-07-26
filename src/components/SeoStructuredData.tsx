@@ -1,22 +1,167 @@
 import React from 'react';
 
 export const SeoStructuredData: React.FC = () => {
+  const localKeywordsList = [
+    // 1. Website designing / Web development local keywords
+    "Website designing company in Delhi",
+    "Website designing in Najafgarh",
+    "Website designing in Dwarka",
+    "Website designing in Uttam Nagar",
+    "Website designing in Tilak Nagar",
+    "Website designing in Subhash Nagar",
+    "Best website designer near me Delhi",
+    "Affordable website designing Delhi",
+    "Professional website development Dwarka",
+    "Responsive website design Najafgarh",
+    "E-commerce website designing Uttam Nagar",
+    "Custom website design Tilak Nagar",
+    "Website redesign company Subhash Nagar",
+    "Website designing agency near Najafgarh",
+    "WordPress website designing Dwarka",
+    "Website designing services Uttam Nagar Delhi",
+    "Cheap website designing Tilak Nagar",
+    "Mobile friendly website design Subhash Nagar",
+    "Website designing company near Dwarka",
+    "Best website designer in West Delhi",
+    "Website development company Najafgarh Delhi",
+    "Corporate website designing Dwarka",
+    "Small business website design Uttam Nagar",
+    "Website designing packages Tilak Nagar",
+    "SEO friendly website design Subhash Nagar",
+
+    // 2. Digital marketing local keywords
+    "Digital marketing agency in Delhi",
+    "Digital marketing company Najafgarh",
+    "Digital marketing services Dwarka",
+    "Digital marketing agency Uttam Nagar",
+    "Digital marketing company Tilak Nagar",
+    "Digital marketing agency Subhash Nagar",
+    "Best digital marketing agency near me Delhi",
+    "Affordable digital marketing Delhi",
+    "Digital marketing expert Dwarka",
+    "Social media marketing Najafgarh",
+    "Google Ads agency Uttam Nagar",
+    "Facebook Ads specialist Tilak Nagar",
+    "Instagram marketing Subhash Nagar",
+    "Digital marketing company near Najafgarh",
+    "Full service digital marketing Dwarka",
+    "Performance marketing agency Uttam Nagar",
+    "Online marketing services Tilak Nagar",
+    "Digital marketing packages Subhash Nagar",
+    "Best digital marketer in West Delhi",
+    "Digital marketing agency near Dwarka",
+    "Lead generation agency Najafgarh",
+    "Branding and digital marketing Dwarka",
+    "Content marketing agency Uttam Nagar",
+    "Digital marketing consultant Tilak Nagar",
+    "Local digital marketing services Subhash Nagar",
+
+    // 3. SEO + Local SEO keywords
+    "SEO company in Delhi",
+    "SEO services Najafgarh",
+    "SEO agency Dwarka",
+    "Local SEO Uttam Nagar",
+    "SEO expert Tilak Nagar",
+    "SEO company Subhash Nagar",
+    "Best SEO agency near me Delhi",
+    "Affordable SEO services Delhi",
+    "Google ranking services Dwarka",
+    "Local SEO specialist Najafgarh",
+    "On-page SEO Uttam Nagar",
+    "Technical SEO Tilak Nagar",
+    "SEO packages Subhash Nagar",
+    "SEO company near Dwarka",
+    "Rank higher on Google Najafgarh",
+    "Local business SEO Uttam Nagar",
+    "SEO audit services Tilak Nagar",
+    "White hat SEO Subhash Nagar",
+    "Best SEO expert West Delhi",
+    "SEO agency near Najafgarh",
+
+    // 4. Combination + AI search friendly keywords (long-tail)
+    "Best website designing and digital marketing company in Dwarka",
+    "Website designing + SEO services Najafgarh",
+    "Digital marketing and website development Uttam Nagar",
+    "Affordable website design and digital marketing Tilak Nagar",
+    "Full digital marketing agency Subhash Nagar Delhi",
+    "Website designing company near me Dwarka",
+    "Digital marketing agency near me Uttam Nagar",
+    "Best website designer and SEO expert Najafgarh",
+    "Local digital marketing and web design Tilak Nagar",
+    "Top rated digital marketing agency West Delhi",
+    "Website redesign + Google Ads Dwarka",
+    "Social media + website designing Uttam Nagar",
+    "Complete digital marketing solutions Subhash Nagar",
+    "Professional website designing agency near Najafgarh",
+    "Best digital marketing company for small business Dwarka",
+    "Website designing and online marketing Tilak Nagar",
+    "SEO friendly website design + digital marketing Uttam Nagar",
+    "Digital marketing agency serving Najafgarh Dwarka Uttam Nagar",
+    "Reliable website designing company Subhash Nagar Delhi",
+    "End to end digital marketing services West Delhi",
+
+    // 5. Area-wise additional location keywords
+    "Website designing in Vikaspuri",
+    "Digital marketing in Janakpuri",
+    "SEO services in Hari Nagar",
+    "Website designing in Rajouri Garden",
+    "Digital marketing in Punjabi Bagh",
+    "Website design in Maya Puri",
+    "Digital marketing agency in West Delhi",
+    "SEO company in South West Delhi",
+    "Website designing near Metro Station Dwarka",
+    "Digital marketing near Uttam Nagar Metro",
+    "Local SEO Najafgarh Road",
+    "Website designing company Dwarka Sector 7",
+    "Website designing company Dwarka Sector 10",
+    "Website designing company Dwarka Sector 12",
+    "Digital marketing agency near Tilak Nagar Metro"
+  ];
+
+  const areaServedList = [
+    "Najafgarh",
+    "Dwarka",
+    "Uttam Nagar",
+    "Tilak Nagar",
+    "Subhash Nagar",
+    "Vikaspuri",
+    "Janakpuri",
+    "Hari Nagar",
+    "Rajouri Garden",
+    "Punjabi Bagh",
+    "Maya Puri",
+    "West Delhi",
+    "South West Delhi",
+    "Dwarka Sector 7",
+    "Dwarka Sector 10",
+    "Dwarka Sector 12",
+    "Najafgarh Road",
+    "Delhi NCR",
+    "Delhi"
+  ];
+
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
+        "@type": "LocalBusiness",
         "@id": "https://clickin-dma.vercel.app/#organization",
         "name": "Clickin DMA | Digital Marketing & Web Development Agency",
-        "alternateName": "Clickin Digital Marketing Agency",
+        "alternateName": ["Clickin Digital Marketing Agency", "Clickin Digital", "Rahul Singh Web Agency"],
         "url": "https://clickin-dma.vercel.app/",
         "logo": "https://clickin-dma.vercel.app/favicon.svg",
         "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
-        "description": "Leading Digital Marketing & Web Development agency providing premium ₹3,999 Landing Pages, ₹8,000 Business Websites, Booking Systems, E-Commerce Stores & WhatsApp Lead Automation.",
+        "description": "Leading Digital Marketing, Web Development & Local SEO agency in West Delhi serving Najafgarh, Dwarka, Uttam Nagar, Tilak Nagar, Subhash Nagar & Janakpuri. High-converting ₹3,999 Landing Pages, ₹8,000 Business Websites, Google Ads & Local SEO.",
+        "keywords": localKeywordsList.join(", "),
+        "knowsAbout": localKeywordsList,
+        "areaServed": areaServedList.map(area => ({
+          "@type": "AdministrativeArea",
+          "name": area
+        })),
         "founder": {
           "@type": "Person",
           "name": "Rahul Singh",
-          "jobTitle": "Founder & Managing Director",
+          "jobTitle": "Founder, Web Developer & Digital Marketer",
           "telephone": "+918882292448",
           "email": "clickindma@gmail.com"
         },
@@ -27,8 +172,9 @@ export const SeoStructuredData: React.FC = () => {
         "paymentAccepted": "Cash, Credit Card, UPI, Bank Transfer, Razorpay",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Delhi NCR",
+          "addressLocality": "West Delhi, Najafgarh, Dwarka, Uttam Nagar",
           "addressRegion": "Delhi",
+          "postalCode": "110043",
           "addressCountry": "IN"
         },
         "geo": {
@@ -52,14 +198,14 @@ export const SeoStructuredData: React.FC = () => {
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Web Development & Marketing Packages",
+          "name": "Web Development & Digital Marketing Services in West Delhi",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Landing Page Package",
-                "description": "1 Premium Responsive Landing Page, Mobile Friendly Design, WhatsApp Click-to-Chat Button, Contact Form, Basic SEO Setup"
+                "name": "Website Designing in Najafgarh, Dwarka & Uttam Nagar",
+                "description": "1 Premium Responsive Landing Page, Mobile Friendly Design, WhatsApp Lead Automation, Basic Local SEO Setup"
               },
               "price": "3999",
               "priceCurrency": "INR"
@@ -68,8 +214,8 @@ export const SeoStructuredData: React.FC = () => {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Professional Website Package",
-                "description": "Up to 5 Custom Pages, Premium Responsive Design, Contact Form, WhatsApp Integration, Google Maps, Speed Optimization, 1 Business Email"
+                "name": "Professional Business Website Development Tilak Nagar & Subhash Nagar",
+                "description": "Up to 5 Custom Pages, Premium Responsive Design, Contact Form, WhatsApp Integration, Google Maps Local SEO, Speed Optimization"
               },
               "price": "8000",
               "priceCurrency": "INR"
@@ -78,20 +224,10 @@ export const SeoStructuredData: React.FC = () => {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Booking Website Package",
-                "description": "Up to 7 Pages, Appointment Booking System, WhatsApp Confirmation, Email Notification, Razorpay Payment Integration"
+                "name": "Digital Marketing & Local SEO Packages Delhi",
+                "description": "Google Ads, Facebook Ads, Instagram Growth, Google Business Profile Ranking, Local Pack SEO in West Delhi"
               },
-              "price": "12000",
-              "priceCurrency": "INR"
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "E-Commerce Website Package",
-                "description": "Up to 25 Products, Shopping Cart, Razorpay Gateway, Cash on Delivery, Coupon System, Admin Panel"
-              },
-              "price": "15000",
+              "price": "5000",
               "priceCurrency": "INR"
             }
           ]
@@ -103,34 +239,26 @@ export const SeoStructuredData: React.FC = () => {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How much does a website cost at Clickin DMA?",
+            "name": "Which is the best website designing company in Najafgarh, Dwarka & Uttam Nagar?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Clickin DMA provides affordable agency pricing: High-Converting Landing Pages cost ₹3,999, 5-Page Professional Websites cost ₹8,000, Appointment Booking Websites cost ₹12,000, and full E-Commerce stores start at ₹15,000."
+              "text": "Clickin DMA led by Rahul Singh (+91 88822 92448) is the top-rated website designing company serving Najafgarh, Dwarka, Uttam Nagar, Tilak Nagar, and Subhash Nagar with packages starting at just ₹3,999."
             }
           },
           {
             "@type": "Question",
-            "name": "Does Clickin DMA offer free hosting and free SEO audits?",
+            "name": "What digital marketing and SEO services does Clickin DMA offer in West Delhi?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, Clickin DMA offers complimentary SEO ranking audits, free consultation for hosting & domain setup, and free initial speed optimization with every project."
+              "text": "Clickin DMA provides complete digital marketing solutions including Local SEO, Google Business Profile ranking, Google Ads, Meta Ads, social media management, and web development across West Delhi."
             }
           },
           {
             "@type": "Question",
-            "name": "How can I contact Rahul Singh at Clickin DMA?",
+            "name": "How can I contact Rahul Singh for website designing in Tilak Nagar or Subhash Nagar?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can call or WhatsApp Rahul Singh directly at +91 88822 92448 or email clickindma@gmail.com for instant quotes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What features are included in the ₹8,000 Professional Website package?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The ₹8,000 Most Popular package includes up to 5 custom designed pages, mobile responsive layout, contact form, WhatsApp integration, Google Maps, basic SEO, speed optimization, social media links, SSL setup, 1 business email, 2 revisions, and 15 days of free support."
+              "text": "You can directly call or WhatsApp Rahul Singh at +91 88822 92448 or email clickindma@gmail.com for instant quotes and free consultation."
             }
           }
         ]
@@ -145,3 +273,4 @@ export const SeoStructuredData: React.FC = () => {
     />
   );
 };
+
