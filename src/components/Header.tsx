@@ -82,7 +82,7 @@ export const Header: React.FC<HeaderProps> = ({
           {onViewLeadsClick && (
             <button
               onClick={onViewLeadsClick}
-              title="View Submitted Leads"
+              title="Admin Privacy Leads Panel (Password Protected)"
               className="relative p-2 text-slate-600 hover:text-amber-600 bg-slate-100 border border-slate-300 rounded-lg text-xs transition-colors cursor-pointer"
             >
               <ShieldCheck className="w-4 h-4" />

@@ -20,6 +20,7 @@ import { BookCallModal } from './components/BookCallModal';
 import { FloatingContact } from './components/FloatingContact';
 import { InquiriesDrawer } from './components/InquiriesDrawer';
 import { WhatsAppLeadModal } from './components/WhatsAppLeadModal';
+import { AdminAuthModal } from './components/AdminAuthModal';
 import { SeoStructuredData } from './components/SeoStructuredData';
 import { getStoredLeads } from './lib/leadStorage';
 import { PackageItem, LeadInquiry } from './types';
@@ -29,6 +30,8 @@ export function App() {
   const [isBookCallModalOpen, setIsBookCallModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<PackageItem | null>(null);
   const [isInquiriesDrawerOpen, setIsInquiriesDrawerOpen] = useState(false);
+  const [isAdminAuthModalOpen, setIsAdminAuthModalOpen] = useState(false);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
   const [leads, setLeads] = useState<LeadInquiry[]>([]);
   const [activeWhatsAppLead, setActiveWhatsAppLead] = useState<LeadInquiry | null>(null);
 
@@ -40,6 +43,14 @@ export function App() {
   const refreshLeads = () => {
     const data = getStoredLeads();
     setLeads(data);
+  };
+
+  const handleOpenAdminLeads = () => {
+    if (isAdminAuthenticated) {
+      setIsInquiriesDrawerOpen(true);
+    } else {
+      setIsAdminAuthModalOpen(true);
+    }
   };
 
   const handleLeadSubmitted = (newLead?: LeadInquiry) => {
@@ -71,7 +82,7 @@ export function App() {
           setIsBookCallModalOpen(true);
         }}
         onDiscountClick={() => setIsDiscountModalOpen(true)}
-        onViewLeadsClick={() => setIsInquiriesDrawerOpen(true)}
+        onViewLeadsClick={handleOpenAdminLeads}
         leadCount={leads.length}
       />
 
@@ -165,7 +176,7 @@ export function App() {
           setSelectedPackage(null);
           setIsBookCallModalOpen(true);
         }}
-        onViewLeadsClick={() => setIsInquiriesDrawerOpen(true)}
+        onViewLeadsClick={handleOpenAdminLeads}
       />
 
       {/* Modals & Overlays */}
@@ -185,11 +196,24 @@ export function App() {
         onLeadSubmitted={handleLeadSubmitted}
       />
 
+      {/* Admin Security Password Modal */}
+      <AdminAuthModal
+        isOpen={isAdminAuthModalOpen}
+        onClose={() => setIsAdminAuthModalOpen(false)}
+        onAuthenticated={() => {
+          setIsAdminAuthenticated(true);
+          setIsAdminAuthModalOpen(false);
+          setIsInquiriesDrawerOpen(true);
+        }}
+      />
+
+      {/* Protected Admin Leads Drawer */}
       <InquiriesDrawer
         isOpen={isInquiriesDrawerOpen}
         onClose={() => setIsInquiriesDrawerOpen(false)}
         leads={leads}
         onClearLeads={handleClearLeads}
+        onLockAdmin={() => setIsAdminAuthenticated(false)}
       />
 
       {/* Instant WhatsApp Pop-Up Modal triggered on ANY form submission */}

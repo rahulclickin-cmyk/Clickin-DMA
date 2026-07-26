@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LeadInquiry } from '../types';
-import { X, Trash2, Download, Phone, MessageSquare, ShieldCheck, User, Mail, FileSpreadsheet, Check, Send, ExternalLink, Code } from 'lucide-react';
+import { X, Trash2, Download, Phone, MessageSquare, ShieldCheck, User, Mail, FileSpreadsheet, Check, Send, ExternalLink, Code, Lock } from 'lucide-react';
 import { OWNER_GMAIL, getStoredWebhookUrl, saveWebhookUrl, sendLeadToGoogleWorkspace } from '../lib/leadStorage';
 
 interface InquiriesDrawerProps {
@@ -8,13 +8,15 @@ interface InquiriesDrawerProps {
   onClose: () => void;
   leads: LeadInquiry[];
   onClearLeads: () => void;
+  onLockAdmin?: () => void;
 }
 
 export const InquiriesDrawer: React.FC<InquiriesDrawerProps> = ({
   isOpen,
   onClose,
   leads,
-  onClearLeads
+  onClearLeads,
+  onLockAdmin
 }) => {
   const [webhookUrl, setWebhookUrl] = useState(getStoredWebhookUrl());
   const [isSaved, setIsSaved] = useState(false);
@@ -106,12 +108,28 @@ export const InquiriesDrawer: React.FC<InquiriesDrawerProps> = ({
               </div>
             </div>
 
-            <button
-              onClick={onClose}
-              className="p-2 bg-slate-100 text-slate-600 hover:text-slate-900 rounded-lg cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex items-center gap-2">
+              {onLockAdmin && (
+                <button
+                  onClick={() => {
+                    onLockAdmin();
+                    onClose();
+                  }}
+                  title="Lock Admin Panel"
+                  className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer transition-colors"
+                >
+                  <Lock className="w-3.5 h-3.5 text-amber-600" />
+                  <span>Lock Admin</span>
+                </button>
+              )}
+
+              <button
+                onClick={onClose}
+                className="p-2 bg-slate-100 text-slate-600 hover:text-slate-900 rounded-lg cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
           {/* Active Integration Cards */}
