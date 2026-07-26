@@ -95,6 +95,18 @@ export const Header: React.FC<HeaderProps> = ({
           )}
         </div>
       </div>
+
+      {/* Sub Navigation Bar for Internal SEO Links */}
+      <nav className="bg-slate-900 text-slate-200 px-4 md:px-8 py-2 border-b border-slate-800 text-xs font-semibold overflow-x-auto whitespace-nowrap">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-6 md:gap-8">
+          <a href="#services" className="hover:text-amber-400 transition-colors">Web Services</a>
+          <a href="#pricing" className="hover:text-amber-400 transition-colors">Pricing Packages</a>
+          <a href="#local-areas" className="hover:text-amber-400 transition-colors">West Delhi Areas</a>
+          <a href="#geo-ai-search" className="hover:text-amber-400 transition-colors">GEO & AI Search</a>
+          <a href="#portfolio" className="hover:text-amber-400 transition-colors">Live Demos</a>
+          <a href="#faq" className="hover:text-amber-400 transition-colors">FAQ</a>
+        </div>
+      </nav>
     </header>
   );
 };

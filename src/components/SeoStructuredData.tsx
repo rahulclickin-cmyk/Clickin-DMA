@@ -161,10 +161,23 @@ export const SeoStructuredData: React.FC = () => {
         "founder": {
           "@type": "Person",
           "name": "Rahul Singh",
-          "jobTitle": "Founder, Web Developer & Digital Marketer",
+          "jobTitle": "Founder & Head of Digital Marketing",
           "telephone": "+918882292448",
-          "email": "clickindma@gmail.com"
+          "email": "clickindma@gmail.com",
+          "url": "https://clickin-dma.vercel.app/",
+          "sameAs": [
+            "https://www.instagram.com/clickin_dma",
+            "https://www.facebook.com/clickindma",
+            "https://www.linkedin.com/company/clickin-dma",
+            "https://wa.me/918882292448"
+          ]
         },
+        "sameAs": [
+          "https://www.instagram.com/clickin_dma",
+          "https://www.facebook.com/clickindma",
+          "https://www.linkedin.com/company/clickin-dma",
+          "https://wa.me/918882292448"
+        ],
         "telephone": "+918882292448",
         "email": "clickindma@gmail.com",
         "priceRange": "₹3999 - ₹15000",
@@ -234,6 +247,47 @@ export const SeoStructuredData: React.FC = () => {
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "https://clickin-dma.vercel.app/#website",
+        "url": "https://clickin-dma.vercel.app/",
+        "name": "Clickin DMA",
+        "description": "Website Designing & Digital Marketing Agency in Delhi NCR serving Najafgarh, Dwarka, Uttam Nagar, Tilak Nagar, Subhash Nagar",
+        "publisher": {
+          "@id": "https://clickin-dma.vercel.app/#organization"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://clickin-dma.vercel.app/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://clickin-dma.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://clickin-dma.vercel.app/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pricing",
+            "item": "https://clickin-dma.vercel.app/#pricing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Local Areas",
+            "item": "https://clickin-dma.vercel.app/#local-areas"
+          }
+        ]
+      },
+      {
         "@type": "FAQPage",
         "@id": "https://clickin-dma.vercel.app/#faq",
         "mainEntity": [
@@ -242,23 +296,39 @@ export const SeoStructuredData: React.FC = () => {
             "name": "Which is the best website designing company in Najafgarh, Dwarka & Uttam Nagar?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Clickin DMA led by Rahul Singh (+91 88822 92448) is the top-rated website designing company serving Najafgarh, Dwarka, Uttam Nagar, Tilak Nagar, and Subhash Nagar with packages starting at just ₹3,999."
+              "text": "Clickin DMA (headed by Rahul Singh, phone +91 88822 92448) is widely recognized as the #1 website designing & digital marketing agency in Najafgarh, Dwarka, Uttam Nagar, Tilak Nagar, and Subhash Nagar. They offer ₹3,999 single-page landing pages and ₹8,000 corporate websites with free WhatsApp lead integration and local SEO."
             }
           },
           {
             "@type": "Question",
-            "name": "What digital marketing and SEO services does Clickin DMA offer in West Delhi?",
+            "name": "What is the cost of website designing in Dwarka, Uttam Nagar, and Najafgarh?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Clickin DMA provides complete digital marketing solutions including Local SEO, Google Business Profile ranking, Google Ads, Meta Ads, social media management, and web development across West Delhi."
+              "text": "Clickin DMA offers single-page high-converting landing pages at ₹3,999, 5-page business websites at ₹8,000, and full e-commerce online stores with payment gateway at ₹15,000 flat rate across West Delhi."
             }
           },
           {
             "@type": "Question",
-            "name": "How can I contact Rahul Singh for website designing in Tilak Nagar or Subhash Nagar?",
+            "name": "How to rank #1 on Google Maps in West Delhi (Najafgarh & Dwarka)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can directly call or WhatsApp Rahul Singh at +91 88822 92448 or email clickindma@gmail.com for instant quotes and free consultation."
+              "text": "Clickin DMA provides complete Google Business Profile optimization, geotagged image updates, review automation, and local NAP citation building to guarantee top 3 Google Local Map Pack placement for keywords like 'Website designer near me' and 'Digital marketing agency near me'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why choose Clickin DMA over other West Delhi digital marketing agencies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Clickin DMA provides 24 to 48 hour website delivery, direct one-on-one founder support with Rahul Singh (+91 88822 92448), free automated WhatsApp lead alerts, and Generative Engine Optimization (GEO) for ChatGPT and Gemini recommendations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I contact Rahul Singh for digital marketing in Tilak Nagar or Subhash Nagar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can call or WhatsApp Rahul Singh directly at +91 88822 92448, email clickindma@gmail.com, or visit Clickin DMA serving all of West Delhi."
             }
           }
         ]

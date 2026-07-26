@@ -11,7 +11,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onGetInTouchClick }) => 
       num: '01',
       icon: Calendar,
       title: 'Book Free Appointment',
-      desc: 'Get started by booking your free consultation with a Google certified website developer and Marketing Automation Specialist (Rahul Singh).'
+      desc: 'Get started by booking your free consultation with expert website developer and Marketing Automation Specialist (Rahul Singh).'
     },
     {
       num: '02',

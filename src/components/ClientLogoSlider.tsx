@@ -10,7 +10,7 @@ export const ClientLogoSlider: React.FC = () => {
     { name: "Gupta Sweets & Bakers", location: "Najafgarh", rating: "5.0 ★" },
     { name: "Janakpuri Medical Centre", location: "Janakpuri", rating: "5.0 ★" },
     { name: "Vikaspuri Real Estate", location: "Vikaspuri", rating: "5.0 ★" },
-    { name: "Google Certified Partner", location: "Verified Agency", rating: "5.0 ★" }
+    { name: "West Delhi Business Hub", location: "Verified Local Client", rating: "5.0 ★" }
   ];
 
   // Tripled list for endless seamless infinite scroll loop

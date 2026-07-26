@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, Phone, Sparkles, Gift, ArrowRight, ShieldCheck, X, Search, Zap, HelpCircle } from 'lucide-react';
+import { trackWhatsAppClick, trackPhoneCallClick } from '../lib/analytics';
 
 interface OfferItem {
   id: string;
@@ -230,6 +231,7 @@ export const FloatingContact: React.FC = () => {
         {/* CTA 1: Direct Phone Call Button */}
         <a
           href="tel:+918882292448"
+          onClick={() => trackPhoneCallClick('Floating Call Button')}
           aria-label="Call Now"
           className="h-12 px-4 bg-white hover:bg-amber-500 hover:text-slate-950 border border-amber-400 text-slate-900 rounded-full flex items-center justify-center gap-2 shadow-lg transition-all duration-300 hover:scale-105 group cursor-pointer"
         >
@@ -244,6 +246,7 @@ export const FloatingContact: React.FC = () => {
           href={`https://wa.me/918882292448?text=${encodeURIComponent(activeOffer.whatsappMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick('Floating Bubble Button')}
           aria-label="Chat on WhatsApp"
           className="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-110 relative group cursor-pointer"
         >

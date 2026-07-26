@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onDiscountClick, onLeadSubmitted }) 
             <div className="flex text-amber-500 font-bold">
               {'★'.repeat(5)}
             </div>
-            <span className="font-medium">4.9/5 Star Rated Google Certified Agency • 200+ Indian Businesses Served</span>
+            <span className="font-medium">Top Rated Web Designing & Digital Marketing Agency • 200+ Indian Businesses Served</span>
           </div>
         </div>
 

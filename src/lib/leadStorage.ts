@@ -1,4 +1,5 @@
 import { LeadInquiry } from '../types';
+import { trackLeadSubmission } from './analytics';
 
 const LEADS_STORAGE_KEY = 'clickin_digital_leads';
 const WEBHOOK_STORAGE_KEY = 'clickin_google_webhook_url';
@@ -109,6 +110,9 @@ export function saveNewLead(lead: Omit<LeadInquiry, 'id' | 'submittedAt'>): Lead
 
   // Dispatch to Google Workspace (Gmail + Sheets)
   sendLeadToGoogleWorkspace(newLead);
+
+  // Track event in GA4 and Meta Pixel
+  trackLeadSubmission(newLead.serviceSelected, newLead.phone);
 
   return newLead;
 }

@@ -33,11 +33,11 @@ export const Footer: React.FC<FooterProps> = ({ onGetInTouchClick, onViewLeadsCl
             <div className="flex items-center gap-2 pt-2 text-[10px] text-slate-700">
               <span className="bg-amber-100 border border-amber-300 text-amber-900 px-2.5 py-1 rounded font-bold flex items-center gap-1">
                 <Award className="w-3 h-3 text-amber-600" />
-                Google Certified
+                Verified Agency
               </span>
               <span className="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded font-bold flex items-center gap-1 shadow-sm">
                 <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                200+ 5-Star Reviews
+                200+ Projects Delivered
               </span>
             </div>
           </div>
@@ -127,6 +127,24 @@ export const Footer: React.FC<FooterProps> = ({ onGetInTouchClick, onViewLeadsCl
             </div>
           </div>
 
+        </div>
+
+        {/* Local Area SEO Quick Links */}
+        <div className="pt-6 border-t border-slate-200/80 space-y-3">
+          <h5 className="text-xs font-black uppercase text-amber-900 tracking-wider">
+            Popular Local Search Areas & Services in West Delhi:
+          </h5>
+          <div className="flex flex-wrap gap-2 text-[11px] text-slate-600">
+            <a href="#services" className="hover:text-amber-800 hover:underline">Website Designing in Najafgarh</a> • 
+            <a href="#services" className="hover:text-amber-800 hover:underline">Website Designing in Dwarka Sector 12</a> • 
+            <a href="#services" className="hover:text-amber-800 hover:underline">Website Designing in Uttam Nagar</a> • 
+            <a href="#services" className="hover:text-amber-800 hover:underline">Website Designing in Tilak Nagar</a> • 
+            <a href="#services" className="hover:text-amber-800 hover:underline">Website Designing in Subhash Nagar</a> • 
+            <a href="#local-areas" className="hover:text-amber-800 hover:underline">Digital Marketing Agency Dwarka</a> • 
+            <a href="#local-areas" className="hover:text-amber-800 hover:underline">SEO Company Najafgarh</a> • 
+            <a href="#geo-ai-search" className="hover:text-amber-800 hover:underline">GEO Generative Engine Optimization</a> • 
+            <a href="#pricing" className="hover:text-amber-800 hover:underline">Website Packages ₹3999</a>
+          </div>
         </div>
 
         {/* Bottom Bar */}

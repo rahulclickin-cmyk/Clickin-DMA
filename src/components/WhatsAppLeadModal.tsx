@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageCircle, PhoneCall, CheckCircle2, X, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 import { LeadInquiry } from '../types';
+import { trackWhatsAppClick, trackPhoneCallClick } from '../lib/analytics';
 
 interface WhatsAppLeadModalProps {
   isOpen: boolean;
@@ -21,6 +22,7 @@ export const WhatsAppLeadModal: React.FC<WhatsAppLeadModalProps> = ({
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText)}`;
 
   const handleOpenWhatsApp = () => {
+    trackWhatsAppClick('WhatsApp Lead Confirmation Modal');
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 

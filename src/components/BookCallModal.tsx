@@ -77,7 +77,7 @@ export const BookCallModal: React.FC<BookCallModalProps> = ({
             Schedule a Free Call
           </h3>
           <p className="text-xs text-slate-600 font-medium">
-            Talk directly with <strong>Rahul Singh</strong> (Google Certified Web Developer & Marketing Specialist).
+            Talk directly with <strong>Rahul Singh</strong> (Senior Web Developer & Marketing Automation Specialist).
           </p>
         </div>
 

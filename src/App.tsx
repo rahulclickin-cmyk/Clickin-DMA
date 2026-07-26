@@ -5,12 +5,12 @@ import { ClientLogoSlider } from './components/ClientLogoSlider';
 import { ServicesSliders } from './components/ServicesSliders';
 import { SocialSidebar } from './components/SocialSidebar';
 import { DiscussIdea } from './components/DiscussIdea';
-import { TrustRatings } from './components/TrustRatings';
 import { HowItWorks } from './components/HowItWorks';
 import { StatsCounter } from './components/StatsCounter';
 import { PricingPackages } from './components/PricingPackages';
 import { ProjectShowcase } from './components/ProjectShowcase';
 import { DarkServicesTicker } from './components/DarkServicesTicker';
+import { GeoAiOverviewSection } from './components/GeoAiOverviewSection';
 import { HappyClients } from './components/HappyClients';
 import { SanityPosts } from './components/SanityPosts';
 import { BottomLeadForm } from './components/BottomLeadForm';
@@ -102,9 +102,6 @@ export function App() {
           }}
         />
 
-        {/* Trust, Google Ratings & Review Cards */}
-        <TrustRatings />
-
         {/* How It Works ? 3 Steps */}
         <HowItWorks
           onGetInTouchClick={() => {
@@ -129,8 +126,16 @@ export function App() {
           }}
         />
 
-        {/* Dark Background Services & Keywords Ticker (SEO, GSO, ASO, Website Design) */}
+        {/* Dark Background Services & Keywords Ticker (SEO, GEO, Website Design) */}
         <DarkServicesTicker />
+
+        {/* Generative Engine Optimization (GEO) & Local Knowledge Hub */}
+        <GeoAiOverviewSection
+          onBookCallClick={() => {
+            setSelectedPackage(null);
+            setIsBookCallModalOpen(true);
+          }}
+        />
 
         {/* Happy Clients & Verified Success Stories Section */}
         <HappyClients
