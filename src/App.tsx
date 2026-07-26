@@ -6,7 +6,6 @@ import { ServicesSliders } from './components/ServicesSliders';
 import { SocialSidebar } from './components/SocialSidebar';
 import { DiscussIdea } from './components/DiscussIdea';
 import { TrustRatings } from './components/TrustRatings';
-import { VideoTestimonials } from './components/VideoTestimonials';
 import { HowItWorks } from './components/HowItWorks';
 import { StatsCounter } from './components/StatsCounter';
 import { PricingPackages } from './components/PricingPackages';
@@ -105,9 +104,6 @@ export function App() {
 
         {/* Trust, Google Ratings & Review Cards */}
         <TrustRatings />
-
-        {/* Client Video Testimonials */}
-        <VideoTestimonials />
 
         {/* How It Works ? 3 Steps */}
         <HowItWorks
