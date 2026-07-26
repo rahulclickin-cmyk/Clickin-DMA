@@ -14,6 +14,7 @@ export interface GoogleReview {
 export interface PackageItem {
   id: string;
   name: string;
+  subtitle?: string;
   price: string;
   badge?: string;
   popular?: boolean;

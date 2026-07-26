@@ -79,68 +79,94 @@ export const PRICING_PACKAGES: PackageItem[] = [
   {
     id: 'landing-page',
     name: 'LANDING PAGE',
-    price: '₹3,999/-',
-    badge: 'Best for Quick Launches',
+    subtitle: 'Perfect for Startups & Small Businesses',
+    price: '₹3,999',
     features: [
-      'Single-Page High Converting Layout',
-      'Mobile Friendly & Responsive Design',
-      '1 Business Email-Id',
-      'Free SSL Security Certificate',
-      'Fast Speed & SEO Ready',
-      'WhatsApp & Direct Call Lead Capture',
-      'Unlimited Bandwidth & Storage',
-      '24/7 Priority Support'
+      '1 Premium Responsive Landing Page',
+      'Mobile Friendly Design',
+      'WhatsApp Click-to-Chat Button',
+      'Contact Form',
+      'Basic SEO Setup',
+      'SSL Certificate Setup',
+      'Fast Loading Website',
+      '1 Free Revision',
+      '7 Days Free Support'
     ]
   },
   {
     id: 'professional-website',
-    name: 'PROFESSIONAL WEBSITE (5 PAGES)',
-    price: '₹8,000/-',
+    name: 'PROFESSIONAL WEBSITE',
+    subtitle: 'Best for Growing Businesses',
+    price: '₹8,000',
     popular: true,
-    badge: 'Most Popular Choice',
+    badge: 'Most Popular',
     features: [
-      'Up to 5 Custom Designed Pages',
-      '1 Business Email Id',
-      'SEO Ready & Fast Speed Optimized',
-      'Unlimited Images & Video Support',
-      'Social Media & WhatsApp Integration',
-      'Custom Lead & Inquiry Forms',
-      'Free SSL Security Certificate',
-      '24/7 Priority Phone & Chat Support'
+      'Up to 5 Custom Pages',
+      'Premium Responsive Design',
+      'Contact Form',
+      'WhatsApp Integration',
+      'Google Maps Integration',
+      'Basic SEO Setup',
+      'Speed Optimization',
+      'Social Media Integration',
+      'SSL Certificate Setup',
+      '1 Business Email',
+      '2 Free Revisions',
+      '15 Days Free Support'
     ]
   },
   {
     id: 'booking-website',
     name: 'BOOKING WEBSITE',
-    price: '₹12,000/-',
-    badge: 'Ideal for Service Providers',
+    subtitle: 'Perfect for Clinics, Salons, Gyms & Consultants',
+    price: '₹12,000',
     features: [
-      'Interactive Calendar & Appointment Booking',
-      'Automated WhatsApp & Email Confirmations',
-      'Payment Gateway Integration (Razorpay/UPI)',
-      'Service Catalog & Staff Scheduling',
-      'Mobile Responsive & Fast Speed',
-      'SEO Optimized & Domain Setup',
-      'Client Inquiry Management Portal',
-      '24/7 Technical Support & Training'
+      'Up to 7 Pages',
+      'Appointment Booking System',
+      'WhatsApp Confirmation',
+      'Email Notification',
+      'Razorpay Payment Integration',
+      'Mobile Responsive',
+      'Basic SEO Setup',
+      'Admin Dashboard',
+      'Contact & Inquiry Forms',
+      '30 Days Free Support'
     ]
   },
   {
     id: 'ecommerce-website',
-    name: 'E-COMMERCE WEBSITE (STARTING)',
-    price: '₹15,000/-',
-    badge: 'Maximum Sales & Store Growth',
+    name: 'E-COMMERCE WEBSITE',
+    subtitle: 'Launch Your Online Store',
+    price: 'Starting ₹15,000',
     features: [
-      'Full Multi-Product Online Store & Cart',
-      'Payment Gateway (Razorpay/UPI/Cards/COD)',
-      'Inventory Management & Order Tracking',
-      'Automated Lead Capture & CRM Sync',
-      'SEO Ready & Mobile Optimized Experience',
-      'Coupon Codes & Discount Management',
-      'Unlimited Product Listings Support',
-      '1 Year Priority Support & Maintenance'
+      'Up to 25 Products',
+      'Shopping Cart',
+      'Razorpay Payment Gateway',
+      'Cash on Delivery Option',
+      'Product Categories',
+      'Order Management',
+      'Mobile Responsive Design',
+      'Basic SEO Setup',
+      'Coupon System',
+      'Admin Panel',
+      '30 Days Free Support'
     ]
   }
+];
+
+export const OPTIONAL_ADDONS = [
+  { name: 'Extra Page', price: '₹800/Page', icon: 'FileText' },
+  { name: 'Business Email', price: '₹500', icon: 'Mail' },
+  { name: 'Logo Design', price: '₹1,000', icon: 'Palette' },
+  { name: 'Content Writing', price: '₹500/Page', icon: 'PenTool' },
+  { name: 'Premium Images', price: '₹500', icon: 'Image' },
+  { name: 'Payment Gateway Setup', price: '₹1,000', icon: 'CreditCard' },
+  { name: 'Blog Setup', price: '₹1,500', icon: 'Layout' },
+  { name: 'Booking System Upgrade', price: '₹3,000', icon: 'Calendar' },
+  { name: 'Advanced SEO', price: '₹5,000+', icon: 'Search' },
+  { name: 'AI Chatbot', price: '₹5,000+', icon: 'Bot' },
+  { name: 'WhatsApp Automation', price: '₹7,500+', icon: 'MessageSquare' },
+  { name: 'Monthly Website Maintenance', price: '₹999/month', icon: 'ShieldCheck' }
 ];
 
 export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
