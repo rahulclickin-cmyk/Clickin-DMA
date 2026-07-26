@@ -84,6 +84,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onContactClick
                 <img
                   src={project.image}
                   alt={project.title}
+                  referrerPolicy="no-referrer"
                   className="w-full object-cover object-top transition-transform duration-[5000ms] ease-in-out group-hover:-translate-y-[calc(100%-16rem)] sm:group-hover:-translate-y-[calc(100%-18rem)]"
                 />
 
@@ -162,6 +163,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ onContactClick
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
+                referrerPolicy="no-referrer"
                 className="w-full object-cover object-top transition-transform duration-[6000ms] ease-in-out group-hover/modal:-translate-y-[calc(100%-20rem)]"
               />
             </div>
