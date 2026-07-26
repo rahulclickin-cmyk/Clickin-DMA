@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { CheckCircle2, Tag, Send, Sparkles, ShieldCheck, PhoneCall, Award } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { saveNewLead } from '../lib/leadStorage';
+import { LeadInquiry } from '../types';
 
 interface HeroProps {
   onDiscountClick: () => void;
-  onLeadSubmitted: () => void;
+  onLeadSubmitted: (lead: LeadInquiry) => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onDiscountClick, onLeadSubmitted }) => {
@@ -21,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onDiscountClick, onLeadSubmitted }) 
 
     setIsSubmitting(true);
     setTimeout(() => {
-      saveNewLead({
+      const createdLead = saveNewLead({
         name: name.trim(),
         phone: phone.trim(),
         message: message.trim() || 'Hero section lead form submission',
@@ -30,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({ onDiscountClick, onLeadSubmitted }) 
 
       setIsSubmitting(false);
       setSubmitted(true);
-      onLeadSubmitted();
+      onLeadSubmitted(createdLead);
 
       // Trigger celebration confetti
       try {

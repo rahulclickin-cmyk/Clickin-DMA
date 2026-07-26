@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { X, Calendar, Clock, Check, PhoneCall } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { saveNewLead } from '../lib/leadStorage';
-import { PackageItem } from '../types';
+import { PackageItem, LeadInquiry } from '../types';
 
 interface BookCallModalProps {
   isOpen: boolean;
   onClose: () => void;
   selectedPackage?: PackageItem | null;
-  onLeadSubmitted: () => void;
+  onLeadSubmitted: (lead: LeadInquiry) => void;
 }
 
 export const BookCallModal: React.FC<BookCallModalProps> = ({
@@ -32,7 +32,7 @@ export const BookCallModal: React.FC<BookCallModalProps> = ({
 
     setIsSubmitting(true);
     setTimeout(() => {
-      saveNewLead({
+      const createdLead = saveNewLead({
         name: name.trim(),
         phone: phone.trim(),
         message: `Free Call Consultation requested for ${preferredTime}. Note: ${note || 'None'}`,
@@ -41,7 +41,7 @@ export const BookCallModal: React.FC<BookCallModalProps> = ({
 
       setIsSubmitting(false);
       setBooked(true);
-      onLeadSubmitted();
+      onLeadSubmitted(createdLead);
 
       try {
         confetti({

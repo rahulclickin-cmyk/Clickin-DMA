@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { ClientLogoSlider } from './components/ClientLogoSlider';
 import { ServicesSliders } from './components/ServicesSliders';
 import { SocialSidebar } from './components/SocialSidebar';
 import { DiscussIdea } from './components/DiscussIdea';
@@ -10,6 +11,8 @@ import { HowItWorks } from './components/HowItWorks';
 import { StatsCounter } from './components/StatsCounter';
 import { PricingPackages } from './components/PricingPackages';
 import { ProjectShowcase } from './components/ProjectShowcase';
+import { DarkServicesTicker } from './components/DarkServicesTicker';
+import { HappyClients } from './components/HappyClients';
 import { SanityPosts } from './components/SanityPosts';
 import { BottomLeadForm } from './components/BottomLeadForm';
 import { Footer } from './components/Footer';
@@ -17,6 +20,7 @@ import { DiscountModal } from './components/DiscountModal';
 import { BookCallModal } from './components/BookCallModal';
 import { FloatingContact } from './components/FloatingContact';
 import { InquiriesDrawer } from './components/InquiriesDrawer';
+import { WhatsAppLeadModal } from './components/WhatsAppLeadModal';
 import { SeoStructuredData } from './components/SeoStructuredData';
 import { getStoredLeads } from './lib/leadStorage';
 import { PackageItem, LeadInquiry } from './types';
@@ -27,6 +31,7 @@ export function App() {
   const [selectedPackage, setSelectedPackage] = useState<PackageItem | null>(null);
   const [isInquiriesDrawerOpen, setIsInquiriesDrawerOpen] = useState(false);
   const [leads, setLeads] = useState<LeadInquiry[]>([]);
+  const [activeWhatsAppLead, setActiveWhatsAppLead] = useState<LeadInquiry | null>(null);
 
   // Load leads on mount
   useEffect(() => {
@@ -36,6 +41,13 @@ export function App() {
   const refreshLeads = () => {
     const data = getStoredLeads();
     setLeads(data);
+  };
+
+  const handleLeadSubmitted = (newLead?: LeadInquiry) => {
+    refreshLeads();
+    if (newLead) {
+      setActiveWhatsAppLead(newLead);
+    }
   };
 
   const handleClearLeads = () => {
@@ -69,8 +81,11 @@ export function App() {
         {/* Hero Section */}
         <Hero
           onDiscountClick={() => setIsDiscountModalOpen(true)}
-          onLeadSubmitted={refreshLeads}
+          onLeadSubmitted={handleLeadSubmitted}
         />
+
+        {/* Gently Moving Client Logo & Trust Slider */}
+        <ClientLogoSlider />
 
         {/* Home Page Services Sliders Section */}
         <ServicesSliders
@@ -118,6 +133,17 @@ export function App() {
           }}
         />
 
+        {/* Dark Background Services & Keywords Ticker (SEO, GSO, ASO, Website Design) */}
+        <DarkServicesTicker />
+
+        {/* Happy Clients & Verified Success Stories Section */}
+        <HappyClients
+          onBookCallClick={() => {
+            setSelectedPackage(null);
+            setIsBookCallModalOpen(true);
+          }}
+        />
+
         {/* Sanity CMS Posts Section */}
         <SanityPosts
           onReadMoreClick={() => {
@@ -128,7 +154,7 @@ export function App() {
 
         {/* Bottom Lead Capture Form */}
         <BottomLeadForm
-          onLeadSubmitted={refreshLeads}
+          onLeadSubmitted={handleLeadSubmitted}
         />
       </main>
 
@@ -145,7 +171,7 @@ export function App() {
       <DiscountModal
         isOpen={isDiscountModalOpen}
         onClose={() => setIsDiscountModalOpen(false)}
-        onLeadSubmitted={refreshLeads}
+        onLeadSubmitted={handleLeadSubmitted}
       />
 
       <BookCallModal
@@ -155,7 +181,7 @@ export function App() {
           setSelectedPackage(null);
         }}
         selectedPackage={selectedPackage}
-        onLeadSubmitted={refreshLeads}
+        onLeadSubmitted={handleLeadSubmitted}
       />
 
       <InquiriesDrawer
@@ -163,6 +189,13 @@ export function App() {
         onClose={() => setIsInquiriesDrawerOpen(false)}
         leads={leads}
         onClearLeads={handleClearLeads}
+      />
+
+      {/* Instant WhatsApp Pop-Up Modal triggered on ANY form submission */}
+      <WhatsAppLeadModal
+        isOpen={!!activeWhatsAppLead}
+        onClose={() => setActiveWhatsAppLead(null)}
+        leadData={activeWhatsAppLead}
       />
 
       {/* Fixed Social Media Sidebar */}
@@ -176,3 +209,4 @@ export function App() {
 }
 
 export default App;
+

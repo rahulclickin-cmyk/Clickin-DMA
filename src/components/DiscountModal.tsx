@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { X, Tag, Sparkles, Check, Send } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { saveNewLead } from '../lib/leadStorage';
+import { LeadInquiry } from '../types';
 
 interface DiscountModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onLeadSubmitted: () => void;
+  onLeadSubmitted: (lead: LeadInquiry) => void;
 }
 
 export const DiscountModal: React.FC<DiscountModalProps> = ({
@@ -28,7 +29,7 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
 
     setIsSubmitting(true);
     setTimeout(() => {
-      saveNewLead({
+      const createdLead = saveNewLead({
         name: name.trim(),
         phone: phone.trim(),
         message: `Claimed Special Offer: ${claimedDiscount}`,
@@ -37,7 +38,7 @@ export const DiscountModal: React.FC<DiscountModalProps> = ({
 
       setIsSubmitting(false);
       setClaimed(true);
-      onLeadSubmitted();
+      onLeadSubmitted(createdLead);
 
       try {
         confetti({

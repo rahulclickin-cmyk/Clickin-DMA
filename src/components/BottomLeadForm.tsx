@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Send, Sparkles, ShieldCheck } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { saveNewLead } from '../lib/leadStorage';
+import { LeadInquiry } from '../types';
 
 interface BottomLeadFormProps {
-  onLeadSubmitted: () => void;
+  onLeadSubmitted: (lead: LeadInquiry) => void;
 }
 
 export const BottomLeadForm: React.FC<BottomLeadFormProps> = ({ onLeadSubmitted }) => {
@@ -20,7 +21,7 @@ export const BottomLeadForm: React.FC<BottomLeadFormProps> = ({ onLeadSubmitted 
 
     setIsSubmitting(true);
     setTimeout(() => {
-      saveNewLead({
+      const createdLead = saveNewLead({
         name: name.trim(),
         phone: phone.trim(),
         message: message.trim() || 'Bottom lead form inquiry',
@@ -29,7 +30,7 @@ export const BottomLeadForm: React.FC<BottomLeadFormProps> = ({ onLeadSubmitted 
 
       setIsSubmitting(false);
       setSubmitted(true);
-      onLeadSubmitted();
+      onLeadSubmitted(createdLead);
 
       try {
         confetti({
